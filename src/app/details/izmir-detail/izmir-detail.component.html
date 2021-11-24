@@ -1,0 +1,33 @@
+<div style="text-align: center; margin-top: 10%;" *ngIf="forecastIzmirDetail$ | async; let forecast">
+    <hr>
+    <mat-icon style="cursor: pointer;" [routerLink]="['']">reply</mat-icon> <h1>{{ forecast.city.name | uppercase }}</h1>
+    Enlem : {{ forecast.city.coord.lat }}<br>
+    Boylam : {{ forecast.city.coord.lon }}<br>
+    Sehir Nufusu : {{ forecast.city.population }}<br>
+    Saat Dilimi : {{ forecast.city.timezone }}<br>
+    Gunes Dogusu : {{ forecast.city.sunrise  }}<br>
+    Gunes Batisi : {{ forecast.city.sunset }}<br>
+     <hr>
+
+     <div style="background-color: mediumpurple; justify-content: center;display: flex;">
+        <table style="border-style: outset; ">
+            <tr style="border-style: outset;">
+                <th style="border-style: outset;">Enlem</th>
+                <th style="border-style: outset;">Boylam</th>
+                <th style="border-style: outset;">Sehir Nufusu</th>
+                <th style="border-style: outset;">Saat Dilimi</th>
+                <th style="border-style: outset;">Gunes Dogusu</th>
+                <th style="border-style: outset;">Gunes Batisi</th>
+            </tr>
+            <tr>
+                <th style="border-style: outset;">{{ forecast.city.coord.lat }}</th>
+                <th style="border-style: outset;">{{ forecast.city.coord.lon }}</th>
+                <th style="border-style: outset;">{{ forecast.city.population }}</th>
+                <th style="border-style: outset;">{{ forecast.city.timezone }}</th>
+                <th style="border-style: outset;">{{ forecast.city.sunrise  }}</th>
+                <th style="border-style: outset;">{{ forecast.city.sunset }}</th>
+            </tr>   
+        </table>
+        </div>
+
+ </div>
