@@ -1,58 +1,16 @@
 <div style="text-align: center; margin-top: 10%;">
-
-<div *ngIf="forecastBursa$ | async; let forecast">
-   Sehir Adi : {{ forecast.name  }}<br>
-   Ruzgar Hizi : {{ forecast.wind.speed  }}<br>
-   Ortalama Sicaklik : {{ forecast.main.temp - 273.15 | number:'1.0-0' }} C°<br>
-   <button [routerLink]="['./bursa-detail']">Details</button>
-</div>
-
-<br>
-<hr>
-<br>
-
-<div *ngIf="forecastIst$ | async; let forecast">
-    Sehir Adi : {{ forecast.name  }}<br>
-    Ruzgar Hizi : {{ forecast.wind.speed  }}<br>
-    Ortalama Sicaklik : {{ forecast.main.temp - 273.15 | number:'1.0-0' }} C°<br>
-    <button [routerLink]="['./ist-detail']">Details</button>
-</div>
-
-<br>
-<hr>
-<br>
-
-<div *ngIf="forecastAydin$ | async; let forecast">
-    Sehir Adi : {{ forecast.name  }}<br>
-    Ruzgar Hizi : {{ forecast.wind.speed  }}<br>
-    Ortalama Sicaklik : {{ forecast.main.temp - 273.15 | number:'1.0-0' }} C°<br>
-    <button [routerLink]="['./aydin-detail']">Details</button>
-</div>
-
-<br>
-<hr>
-<br>
-
-<div *ngIf="forecastMugla$ | async; let forecast">
-    Sehir Adi : {{ forecast.name  }}<br>
-    Ruzgar Hizi : {{ forecast.wind.speed  }}<br>
-    Ortalama Sicaklik : {{ forecast.main.temp - 273.15 | number:'1.0-0' }} C°<br>
-    <button [routerLink]="['./mugla-detail']">Details</button>
-</div>
-
-<br>
-<hr>
-<br>
-
-<div *ngIf="forecastIzmir$ | async; let forecast">
-    Sehir Adi : {{ forecast.name  }}<br>
-    Ruzgar Hizi : {{ forecast.wind.speed  }}<br>
-    Ortalama Sicaklik : {{ forecast.main.temp - 273.15 | number:'1.0-0' }} C°<br>
-    <button [routerLink]="['./izmir-detail']">Details</button>
-</div>
-
-<br>
-<hr>
-<br>
-
+    <div *ngIf="responseList$ | async; let forecast">
+        <table style="border-collapse: initial; border-width: thin; width: fit-content;">
+            <th>Sehir</th>
+            <th>Ruzgar Hizi</th>
+            <th>Sicaklik</th>
+            <tr *ngFor="let item of forecast">
+                <td>{{ item.name }}</td>
+                <td>{{ item.wind.speed }}</td>
+                <td>{{ item.main.temp }}</td>
+                <td><a [routerLink]="item.name">Details</a></td>
+            </tr>
+        </table>
+        <router-outlet></router-outlet>
+    </div>
 </div>

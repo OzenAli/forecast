@@ -1,0 +1,16 @@
+<div style="text-align: center; margin-top: 10%;">
+    <div>
+        <table style="margin-left: 30%;">
+            <th>Tahmini Saat</th>
+            <th>Otalama Sicaklik</th>
+            <th>Hava</th>
+            <th>Hissedilen Sicaklik</th>
+            <tr *ngFor="let item of foreCastDataList">
+                <td>{{ item.dt_txt }}</td>
+                <td>{{ item.main.temp }}</td>
+                <td>{{ item.weather[0].description }}</td>
+                <td>{{ item.main.feels_like }}</td>
+            </tr>
+        </table>
+    </div>
+</div>

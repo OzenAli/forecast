@@ -64,7 +64,7 @@ export interface City {
     sunset: number;
 }
 
-export interface RootObject {
+export interface ForeCastRootObject {
     cod: string;
     message: number;
     cnt: number;

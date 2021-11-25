@@ -61,3 +61,11 @@ export interface DenemeObject {
     wind: number;
 }
 
+export const Cities = [
+    { id: 1, name: 'Bursa', countryName: 'Turkey' },
+    { id: 2, name: 'Izmir', countryName: 'Turkey' },
+    { id: 3, name: 'Ankara', countryName: 'Turkey' },
+    { id: 4, name: 'Istanbul', countryName: 'Turkey' },
+    { id: 5, name: 'Mugla', countryName: 'Turkey' }
+]
+
