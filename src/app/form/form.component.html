@@ -1,0 +1,92 @@
+<!-- <h1>User Form</h1>
+<form [formGroup]="userForm" (ngSubmit)="onSubmit()">
+    <label>
+        Name:
+        <input type="text" formControlName="name" placeholder="required">
+    </label>
+    <label>
+        Last Name:
+        <input type="text" formControlName="lastname" placeholder="required">
+    </label>
+    <label>
+        Birthday:
+        <input formControlName="birthday" type="date">
+    </label>
+    <label>
+         <select formControlName="gender"> 
+            Cinsiyet:
+            <option *ngFor="let gen of genders" [ngValue]="gen">{{ gen.key }}
+            </option>
+        </select>
+    </label>
+    <div formArrayName="phone" *ngFor="let pho of phone.controls; let i=index" class="grouping">
+        <label>
+            Phone:
+            <input [formControlName]="i" 
+             type="text" placeholder="optional">
+            <button type="button" (click)="removePhone(i)" id="remove_phone">X</button>
+        </label>
+        <button type="button" (click)="addPhone()">Add Phone</button>
+    </div> -->
+    <!-- <div formArrayName="email" *ngFor="let ema of email.controls; let i=index" class="grouping">
+        <label>
+            Phone:
+            <input type="text" placeholder="optional">
+            <button type="button" (click)="removeEmail(i) id="remove_email">X</button>
+        </label>
+        <button type="button" (click)="addEmail()">Add Mail</button>
+    </div> -->
+    <!-- <button id="apply_button">Apply</button>
+</form> -->
+
+
+
+
+<div class="content">
+    <h1>User Editor</h1>
+    <form [formGroup]="userForm" style="margin: 30px;">
+        <div class="form-container">
+            <div>
+                Name
+                <input type="text" name="name" class="form-control" formControlName="name">
+                value : {{ userForm.value.name }}
+            </div>
+            <div>
+                Last Name
+                <input class="form-control" formControlName="lastname">
+            </div>
+            <div>
+                Birthday
+                <input class="form-control" type="date" formControlName="birthday">
+            </div>
+            <div>
+                Gender
+                <select class="form-control select" formControlName="gender">
+                    <option *ngFor="let gender of genders" value="{{ gender.key }}">
+                        {{ gender.value }}
+                    </option>
+                </select>
+            </div>
+            <div formArrayName="phone" *ngFor="let pho of phone.controls; let i=index" class="grouping">
+               
+                Phone
+                <input class="form-control" [formControlName]="i" type="text" placeholder="optional">
+                <button type="button" (click)="removePhone(i)" id="remove_phone">X</button>
+            
+            <button type="button" (click)="addPhone()">Add Phone</button>
+            </div>
+            <div formArrayName="email" *ngFor="let ema of email.controls; let i=index" class="grouping">
+                E-mail
+                <input class="form-control" [formControlName]="i" type="text" placeholder="optional">
+                <button type="button" (click)="removeEmail(i)" id="remove_email">X</button>
+
+                <button type="button" (click)="addEmail()">Add Mail</button>
+            </div>
+            <div>
+                <button class="button" (click)="save()">
+                    Submit
+                </button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -10,6 +10,8 @@ import {MatIconModule} from '@angular/material/icon';
 import {MatListModule} from '@angular/material/list';
 import { NavbarComponent } from './navbar/navbar.component';
 import { DetailsComponent } from './details/details.component';
+import { FormComponent } from './form/form.component';
+import { ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -17,6 +19,7 @@ import { DetailsComponent } from './details/details.component';
     TodayComponent,
     NavbarComponent,
     DetailsComponent,
+    FormComponent,
   ],
   imports: [
     BrowserModule,
@@ -25,7 +28,8 @@ import { DetailsComponent } from './details/details.component';
     HttpClientModule,
     BrowserAnimationsModule,
     MatTableModule,
-    MatListModule
+    MatListModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
