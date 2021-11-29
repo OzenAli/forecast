@@ -57,8 +57,6 @@ export interface RootObject {
 
 export interface DenemeObject {
     cityName: string;
-    temp: number;
-    wind: number;
 }
 
 export const Cities = [

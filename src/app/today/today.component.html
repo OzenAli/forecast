@@ -1,11 +1,15 @@
 <div style="text-align: center; margin-top: 10%;">
     <div *ngIf="responseList$ | async; let forecast">
+        <div class="mb-3">
+            <input type="text" class="form-control" [(ngModel)]="filterText" placeholder="Search...">
+            <small class="text-muted" *ngIf="filterText">Aradiginiz Kelime : {{ filterText }}</small>
+        </div>
         <table style="border-collapse: initial; border-width: thin; width: fit-content;">
             <th>Sehir</th>
             <th>Ruzgar Hizi</th>
             <th>Sicaklik</th>
-            <tr *ngFor="let item of forecast">
-                <td>{{ item.name }}</td>
+            <tr *ngFor="let item of forecast | sortBy | cityFilter:filterText">
+                <td>{{ item.name}}</td>
                 <td>{{ item.wind.speed }}</td>
                 <td>{{ item.main.temp }}</td>
                 <td><a [routerLink]="item.name">Details</a></td>

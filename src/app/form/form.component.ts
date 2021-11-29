@@ -8,6 +8,8 @@ import { FormArray, FormBuilder, FormControl, FormGroup, Validators } from '@ang
 })
 export class FormComponent implements OnInit {
 
+  
+
   genders = [
     { key: 'man', value: 'Man' },
     { key: 'woman', value: 'Woman' }
@@ -16,27 +18,15 @@ export class FormComponent implements OnInit {
   userForm!: FormGroup
 
   constructor() {
-    // this.initializeForm();
     this.userForm = new FormGroup({
       name: new FormControl('', [Validators.required, Validators.minLength(2)]),
       lastname: new FormControl('', [Validators.required, Validators.minLength(2)]),
       birthday: new FormControl(''),
       gender: new FormControl(''),
-      phone: new FormArray([new FormControl('')]),
-      email: new FormArray([new FormControl('')])
+      phone: new FormArray([new FormControl('',Validators.required)]),
+      email: new FormControl('')
     })
   }
-
-  //  initializeForm(): void{
-  //   this.userForm = this.fb.group({
-  //     name: 'Name here',
-  //     lastname: '',
-  //     birthday: '',
-  //     gender: '',
-  //     phone: this.fb.array([this.fb.control('')]),
-  //     // email: this.fb.array([this.fb.control('')])
-  //   });
-  //  }
 
   public onSubmit() {
     console.log(this.userForm.value);
@@ -68,13 +58,6 @@ export class FormComponent implements OnInit {
     }
     console.log(this.userForm.value);
   }
-
-  // setGender(event): void{
-  //   this.userForm.patchValue({
-  //     gend
-  //   })
-  // }
-
 
   get phone(): FormArray {
     return this.userForm.get('phone') as FormArray;

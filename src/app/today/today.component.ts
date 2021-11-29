@@ -10,10 +10,13 @@ import { RootObject} from '../models/forecast';
 })
 export class TodayComponent implements OnInit {
 
+  filterText!: string;
   responseList$!: Observable<RootObject[]>;
   constructor(public forecastService: ForecastService) {}
  
   ngOnInit(): void {
     this.responseList$ = this.forecastService.requestDataFromMultipleSources();
   }
+
+  
 }
