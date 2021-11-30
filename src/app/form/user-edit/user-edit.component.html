@@ -1,0 +1,50 @@
+<h2 mat-dialog-title>Edit User</h2>
+<mat-dialog-content class="mat-typography">
+  <form [formGroup]="userForm">
+    <mat-form-field class="example-full-width">
+        <mat-label>Name</mat-label>
+        <input matInput formControlName="name">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Last Name</mat-label>
+        <input matInput formControlName="lastname">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Birthday</mat-label>
+        <input type="date" matInput formControlName="birthday">
+      </mat-form-field>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Gender</mat-label>
+        <mat-select disableRipple formControlName="gender">
+          <mat-option *ngFor="let gender of genders" value="{{ gender.key }}" value="1">{{ gender.value }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <div formArrayName="phone" *ngFor="let pho of phone.controls; let i=index" class="grouping">
+        Phone
+        <input class="form-control" [formControlName]="i" type="text">
+
+        <button mat-mini-fab color="primary" (click)="removePhone(i)" id="remove_phone"
+            aria-label="Example icon button with a plus one icon">
+            <mat-icon>delete</mat-icon>
+        </button>
+        <button style="margin: 10px;" mat-mini-fab color="primary" (click)="addPhone()"
+            aria-label="Example icon button with a plus one icon">
+            <mat-icon>plus_one</mat-icon>
+        </button>
+    </div>
+
+      <mat-form-field class="example-full-width">
+        <mat-label>Email</mat-label>
+        <input matInput formControlName="email">
+      </mat-form-field>
+  </form>
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-button mat-dialog-close>Cancel</button>
+  <button mat-button [mat-dialog-close]="true" (click)="editUser()" cdkFocusInitial>Edit</button>
+</mat-dialog-actions>

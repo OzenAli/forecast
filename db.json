@@ -1,0 +1,51 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Ali",
+      "lastname": "Ozen",
+      "birthday": "10-12-1993",
+      "gender": "man",
+      "phone": "1234567",
+      "email": "aliozen1993@hotmail.com"
+    },
+    {
+      "name": "Ayse",
+      "lastname": "Tan",
+      "birthday": "2021-11-06",
+      "gender": "woman",
+      "phone": [
+        "4857692"
+      ],
+      "email": "ayse@hotmail.com",
+      "id": 2
+    },
+    {
+      "name": "Merve",
+      "lastname": "Dere",
+      "birthday": "2019-02-15",
+      "gender": "woman",
+      "phone": [
+        [
+          [
+            "3827597"
+          ]
+        ],
+        "3758698"
+      ],
+      "email": "merve@hotmail.com",
+      "id": 3
+    },
+    {
+      "name": "Duygu",
+      "lastname": "Yoldas",
+      "birthday": "2021-06-11",
+      "gender": "woman",
+      "phone": [
+        "2746597"
+      ],
+      "email": "duygu@hotmail.com",
+      "id": 5
+    }
+  ]
+}
